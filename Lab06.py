@@ -12,7 +12,7 @@ def encode(password_):
             encode_password = encode_password + encoding
     return encode_password
 
-'''
+'''<---- EDIT HERE
 def decode(enc_digit):
     decoding_output = ""
     for num in str(enc_digit):
