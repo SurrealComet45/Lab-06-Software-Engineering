@@ -12,15 +12,14 @@ def encode(password_):
             encode_password = encode_password + encoding
     return encode_password
 
-'''<---- EDIT HERE
-def decode(enc_digit):
-    decoding_output = ""
-    for num in str(enc_digit):
-        if num.isdigit():
-            decoding = str((int(num) - 3) % 10)
-            decoding_output = decoding_output + decoding
-    return print(f"The encoded password is {enc_digit}, and the original password is {decoding_output}.")
-'''
+def decode(password_):
+    decoded_password = ""
+    for i in password_:
+        j = int(i) - 3
+        if j < 0:
+            j += 10
+        decoded_password += str(j)
+    return decoded_password
 
 def main():
     function_on = True
@@ -34,6 +33,7 @@ def main():
         elif Menu == 2:
             if last_password:
                 decode_password = decode(last_password)
+                print(f'The encoded password is {last_password}, the original password is {decode_password}')
             else:
                 print("No previous password saved. Please press one to input your password.")
         if Menu == 3:
